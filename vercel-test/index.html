@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Vercelテスト</title>
+</head>
+<body>
+<h1>表示できたら成功</h1>
+<p id="msg">読み込み中...</p>
+
+<script>
+fetch('/api/test')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('msg').textContent = data.message;
+  });
+</script>
+</body>
+</html>
